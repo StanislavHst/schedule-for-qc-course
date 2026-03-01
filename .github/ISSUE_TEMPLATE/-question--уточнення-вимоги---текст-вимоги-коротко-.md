@@ -1,6 +1,6 @@
 ---
 name: '[QUESTION] Уточнення вимоги: "Текст вимоги коротко"'
-about: "[QUESTION]"
+about: '[QUESTION] Уточнення вимоги: "Текст вимоги коротко"'
 title: "[QUESTION]"
 labels: question
 assignees: ''
