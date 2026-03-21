@@ -1,14 +1,11 @@
 ---
-name: test-design
-about: test-design
-title: "[test-design]"
+name: 'Test-design issue '
+about: Issues in design
+title: 'Аналіз: "Назва функціоналу"'
 labels: test-design
 assignees: ''
 
 ---
-
-Title: Аналіз: "Назва функціоналу"
-Labels: test-design
 
 ## Функціонал
 Короткий опис того, що тестуємо.
