@@ -2,6 +2,7 @@ const esModules = ['react-icons'].join('|');
 module.exports = {
     testEnvironment: 'jsdom',
     setupFilesAfterEnv: ['./src/setupTests.js'],
+    modulePathIgnorePatterns: ['<rootDir>/.stryker-tmp/'],
     transform: {
         '^.+\\.js$': 'babel-jest',
     },
