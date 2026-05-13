@@ -1,0 +1,586 @@
+{
+  "info": {
+    "_postman_id": "c2e74fd9-0587-48d7-b5ba-282fb42ede9c",
+    "name": "Schedule API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52389317"
+  },
+  "item": [
+    {
+      "name": "Group",
+      "item": [
+        {
+          "name": "GET ALL",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/groups",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "groups"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": {{groupID}},\r\n  \"disable\": {{groupDisable}},\r\n  \"title\": {{groupTitle}}\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/groups",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "groups"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"disable\": groupDisable,\r\n  \"title\": groupTitle\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/groups",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "groups"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Negative",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"disable\": groupDisable,\r\n  \"title\": groupTitle\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/groups",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "groups"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update order",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": {{groupID}},\r\n  \"title\": {{groupTitle}},\r\n  \"afterId\": {{groupID}}\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/groups/after",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "groups",
+                "after"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create after",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"disable\": {{groupDisable}},\r\n  \"title\": {{groupTitle}},\r\n  \"afterId\": {{groupID}}\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/groups/after",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "groups",
+                "after"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET by ID",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/groups/{{groupID}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "groups",
+                "{{groupID}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/groups/{{groupID}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "groups",
+                "{{groupID}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET with STUDENTS",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/groups/{{groupID}}/with-students",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "groups",
+                "{{groupID}}",
+                "with-students"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET by Teacher",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/groups/teacher/{{groupID}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "groups",
+                "teacher",
+                "{{groupID}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET DISABLED",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/groups/disabled",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "groups",
+                "disabled"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Semester",
+      "item": [
+        {
+          "name": "GET ALL",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/semesters",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "semesters"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": {{semesterId}},\n  \"description\": \"{{semesterDescription}}\",\n  \"year\": {{semesterYear}},\n  \"startDay\": \"13/05/2026\",\n  \"endDay\": \"14/05/2026\",\n  \"currentSemester\": {{semesterCurrentSemester}},\n  \"defaultSemester\": {{semesterDefaultSemester}},\n  \"disable\": {{semesterDisable}},\n  \"semester_days\": {{semesterDays}},\n  \"semester_classes\": [\n    {\n      \"id\": {{semesterClassId}},\n      \"startTime\": \"08:20\",\n      \"endTime\": \"09:40\",\n      \"class_name\": \"{{semesterClass1Name}}\"\n    }\n  ],\n  \"semester_groups\": [\n    {\n      \"id\": {{groupID}},\n      \"title\": \"{{groupTitle}}\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/semesters",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "semesters"
+              ]
+            },
+            "description": "Generated from cURL: curl -X PUT \"{{baseUrl}}/semesters/{{semesterId}}\" -H \"Content-Type: application/json\" -d \"{\\n  \\\"id\\\": {{semesterId}},\\n  \\\"description\\\": \\\"{{semesterDescription}}\\\",\\n  \\\"year\\\": {{semesterYear}},\\n  \\\"startDay\\\": \\\"{{semesterStartDay}}\\\",\\n  \\\"endDay\\\": \\\"{{semesterEndDay}}\\\",\\n  \\\"currentSemester\\\": {{semesterCurrentSemester}},\\n  \\\"defaultSemester\\\": {{semesterDefaultSemester}},\\n  \\\"disable\\\": {{semesterDisable}},\\n  \\\"semester_days\\\": {{semesterDays}},\\n  \\\"semester_classes\\\": [\\n    {\\n      \\\"id\\\": {{semesterClassId}},\\n      \\\"startTime\\\": {\\n        \\\"hour\\\": {{semesterClassStartHour}},\\n        \\\"minute\\\": {{semesterClassStartMinute}},\\n        \\\"second\\\": {{semesterClassStartSecond}},\\n        \\\"nano\\\": {{semesterClassStartNano}}\\n      },\\n      \\\"endTime\\\": {\\n        \\\"hour\\\": {{semesterClassEndHour}},\\n        \\\"minute\\\": {{semesterClassEndMinute}},\\n        \\\"second\\\": {{semesterClassEndSecond}},\\n        \\\"nano\\\": {{semesterClassEndNano}}\\n      },\\n      \\\"class_name\\\": \\\"{{semesterClassName}}\\\"\\n    }\\n  ]\\n}\""
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Negative",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Bearer_{{token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": {{semesterId}},\n  \"description\": \"{{semesterDescription}}\",\n  \"year\": {{semesterYear}},\n  \"startDay\": \"13/05/2026\",\n  \"endDay\": \"14/05/2026\",\n  \"currentSemester\": {{semesterCurrentSemester}},\n  \"defaultSemester\": {{semesterDefaultSemester}},\n  \"disable\": {{semesterDisable}},\n  \"semester_days\": {{semesterDays}},\n  \"semester_classes\": [\n    {\n      \"id\": {{semesterClassId}},\n      \"startTime\": \"08:20\",\n      \"endTime\": \"09:40\",\n      \"class_name\": \"{{semesterClass1Name}}\"\n    }\n  ],\n  \"semester_groups\": [\n    {\n      \"id\": {{groupID}},\n      \"title\": \"{{groupTitle}}\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/semesters",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "semesters"
+              ]
+            },
+            "description": "Generated from cURL: curl -X PUT \"{{baseUrl}}/semesters/{{semesterId}}\" -H \"Content-Type: application/json\" -d \"{\\n  \\\"id\\\": {{semesterId}},\\n  \\\"description\\\": \\\"{{semesterDescription}}\\\",\\n  \\\"year\\\": {{semesterYear}},\\n  \\\"startDay\\\": \\\"{{semesterStartDay}}\\\",\\n  \\\"endDay\\\": \\\"{{semesterEndDay}}\\\",\\n  \\\"currentSemester\\\": {{semesterCurrentSemester}},\\n  \\\"defaultSemester\\\": {{semesterDefaultSemester}},\\n  \\\"disable\\\": {{semesterDisable}},\\n  \\\"semester_days\\\": {{semesterDays}},\\n  \\\"semester_classes\\\": [\\n    {\\n      \\\"id\\\": {{semesterClassId}},\\n      \\\"startTime\\\": {\\n        \\\"hour\\\": {{semesterClassStartHour}},\\n        \\\"minute\\\": {{semesterClassStartMinute}},\\n        \\\"second\\\": {{semesterClassStartSecond}},\\n        \\\"nano\\\": {{semesterClassStartNano}}\\n      },\\n      \\\"endTime\\\": {\\n        \\\"hour\\\": {{semesterClassEndHour}},\\n        \\\"minute\\\": {{semesterClassEndMinute}},\\n        \\\"second\\\": {{semesterClassEndSecond}},\\n        \\\"nano\\\": {{semesterClassEndNano}}\\n      },\\n      \\\"class_name\\\": \\\"{{semesterClassName}}\\\"\\n    }\\n  ]\\n}\""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "POST LOGIN",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"manager@gmail.com\",\r\n  \"password\": \"Qwerty!123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth/sign-in",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "auth",
+            "sign-in"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
